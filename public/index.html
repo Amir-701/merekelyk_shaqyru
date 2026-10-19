@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>merekel_ykshaqyru: мои приглашения</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--r1:#EF4056;--r2:#FF1F57;--ink:#1B1F2A;--mut:#7A8091;--bg:#FAFAFC;--ln:#ECEDF2;--grad:linear-gradient(90deg,#EF4056,#FF1F57)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:500 15px 'Manrope',sans-serif}
+#app{max-width:760px;margin:0 auto;min-height:100vh}.wrap{padding:20px 18px 60px}
+.top{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--ln);display:flex;align-items:center;gap:12px;padding:12px 18px;font-weight:800}
+.bk{width:38px;height:38px;border-radius:12px;border:0;background:#F3F4F8;font-size:1.3rem;cursor:pointer;color:var(--ink)}
+h2{font-size:1.35rem;font-weight:800;margin:10px 0 18px}h3{font-size:1.05rem;font-weight:800;margin:22px 0 10px}.c{text-align:center}
+.sub{color:var(--mut);font-size:.85rem;margin:4px 0}.err{color:var(--r1);min-height:1.2em;margin:8px 0 0;font-size:.85rem}
+.banner{background:var(--grad);color:#fff;border-radius:22px;padding:30px 20px;text-align:center;box-shadow:0 14px 30px rgba(239,64,86,.25);margin-bottom:20px}
+.banner h2{margin:0 0 6px}.banner p{margin:0 0 18px;font-size:.85rem;opacity:.9}
+.btnw{background:#fff;color:var(--r2);border:0;border-radius:14px;padding:14px 26px;font:800 .9rem 'Manrope';cursor:pointer}
+.btnr{display:block;width:100%;background:var(--grad);color:#fff;border:0;border-radius:16px;padding:17px;font:800 1rem 'Manrope';cursor:pointer;box-shadow:0 12px 24px rgba(255,31,87,.28);margin-top:16px;text-align:center;text-decoration:none}
+.btno{display:block;width:100%;background:#fff;border:1px solid var(--ln);border-radius:16px;padding:16px;font:700 .95rem 'Manrope';cursor:pointer;margin-top:10px;color:var(--ink);text-align:center;text-decoration:none}
+.sm{display:inline-block;width:auto;padding:10px 16px;margin:0;font-size:.82rem;border-radius:12px}
+.card{background:#fff;border-radius:20px;padding:20px;box-shadow:0 6px 20px rgba(27,31,42,.06);margin-bottom:14px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:14px}
+.stats{display:flex;gap:10px;margin-top:14px}.stats div{flex:1;background:#F6F7FB;border-radius:12px;padding:10px;text-align:center;font-size:.72rem;color:var(--mut)}
+.stats b{display:block;font-size:1.5rem;color:var(--r1)}
+.lnk{background:none;border:0;color:var(--r1);font:700 .85rem 'Manrope';cursor:pointer}
+input,textarea,select{width:100%;padding:14px;border:1px solid var(--ln);border-radius:14px;font:inherit;background:#fff;color:var(--ink)}
+input:focus,textarea:focus,select:focus{outline:2px solid #FFC9D2;border-color:var(--r1)}
+label{display:block;font-size:.8rem;font-weight:700;margin:16px 0 6px}
+.box{max-width:360px;margin:12vh auto;padding:0 18px;text-align:center}.box>*{margin-bottom:12px}.box h1{font-size:1.7rem;font-weight:800;margin:0 0 4px;color:var(--r1)}
+.lc{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:#fff;border:2px solid transparent;border-radius:18px;padding:14px;margin-bottom:12px;box-shadow:0 6px 18px rgba(27,31,42,.07);cursor:pointer;font:inherit;color:var(--ink)}
+.lc .ic{width:48px;height:48px;border-radius:14px;background:#F3F4F8;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex:none}
+.lc b{display:block}.lc small{color:var(--mut)}.lc.sel{border-color:var(--r1);background:#FFF5F6}.lc.sel .ic{background:var(--grad);color:#fff;font-size:1.3rem}.lc.sel b{color:var(--r1)}
+.note{background:#FFF8E1;border:1px solid #F6E3A1;border-radius:14px;padding:12px;font-size:.78rem;color:#7A5B00;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}.chip{background:#fff;border:1px solid var(--ln);border-radius:14px;padding:12px 16px;font:700 .9rem 'Manrope';cursor:pointer;color:var(--ink);box-shadow:0 4px 12px rgba(27,31,42,.05)}
+.chip:hover{border-color:var(--r1)}
+.tabs{display:flex;gap:10px;margin:8px 0 16px;flex-wrap:wrap}.tab{border:1px solid #E4D6FF;background:#fff;color:#9A3DFF;border-radius:14px;padding:11px 18px;font:800 .85rem 'Manrope';cursor:pointer}
+.tab.on{background:linear-gradient(180deg,#FFB020,#FF8A00);color:#fff;border-color:transparent}
+.price{background:#FFFBE0;border:1px solid #F3E7A0;border-radius:14px;padding:12px 14px;color:#9A5B00;margin-bottom:18px;font-size:.85rem}.price b{font-size:1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:22px 14px}.tp{text-align:center}
+.phone{width:132px;height:250px;margin:0 auto 10px;border:6px solid #1c1c1c;border-radius:24px;overflow:hidden;position:relative}
+.phone .scr{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:10px;text-align:center}
+.phone small{font:italic 500 .8rem 'Cormorant Garamond',serif}.phone b{font:600 1.15rem/1.1 'Cormorant Garamond',serif}.phone i{font-style:normal;font-size:.55rem;letter-spacing:.1em}
+.phone .orn{position:absolute;left:0;right:0;top:0;height:16px;background:repeating-linear-gradient(135deg,currentColor 0 2px,transparent 2px 8px);opacity:.5}
+.vw{background:linear-gradient(180deg,#FFA51F,#FF8A00);color:#fff;border:0;border-radius:12px;padding:9px 18px;font:800 .78rem 'Manrope';cursor:pointer;margin-top:8px}
+.ov{position:fixed;inset:0;background:rgba(27,31,42,.45);z-index:20;display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:#fff;width:100%;max-width:560px;border-radius:26px 26px 0 0;padding:22px 18px 28px;max-height:92vh;overflow:auto}
+.sheet h2{margin:0 0 14px;display:flex;justify-content:space-between}.sheet h2 button{border:0;background:none;font-size:1.4rem;cursor:pointer}
+.pink{background:linear-gradient(90deg,#FFE8EC,#F6E7FF);border:1px solid #FFC9D2;border-radius:16px;padding:14px;font-weight:700;color:#A31D4B;font-size:.85rem;margin-bottom:14px}
+.opt{border:1px solid var(--ln);border-radius:20px;padding:16px;margin-bottom:12px}.opt b{font-size:1.05rem}.opt p{color:var(--mut);margin:6px 0 4px;font-size:.85rem}
+.stp{display:flex;align-items:center;justify-content:center;margin:6px 0 4px}.stp i{width:34px;height:2px;background:var(--ln)}
+.dot{width:32px;height:32px;border-radius:50%;background:#fff;border:2px solid var(--ln);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;color:var(--mut)}
+.dot.ok{background:var(--r1);border-color:var(--r1);color:#fff}.dot.cur{background:var(--r1);border-color:var(--r1);color:#fff;box-shadow:0 0 0 4px #FFD3DA}
+.imp{background:#FFF8E1;border-radius:14px;padding:12px;font-size:.8rem;color:#7A5B00;margin-top:16px}.imp b{display:block;margin-bottom:2px}
+.pv{width:100%;height:560px;border:1px solid var(--ln);border-radius:18px;background:#fff}
+.sumtxt{background:#F6F7FB;border:1px solid var(--ln);border-radius:16px;padding:16px;white-space:pre-line;font-size:.88rem;line-height:1.6}
+.g{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--ln);flex-wrap:wrap}.g small{display:block;color:var(--mut)}
+.st-yes,.st-plus{color:#2E8B57!important}.st-no{color:var(--r1)!important}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 20px;border-radius:14px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:50}#toast.show{opacity:1}
+</style></head><body>
+<div id="app"></div><div id="toast"></div>
+<script src="/i18n.js"></script>
+<script>
+/* ===== НАСТРОЙКИ ===== */
+const MANAGER_WA = '77000000000';   // WhatsApp менеджера: код страны и номер без «+»
+const PRICE = '4 900 ₸';            // цена за приглашение (только показывается, оплата не подключена)
+
+const $ = s => document.querySelector(s), app = $('#app');
+const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ST = { pending: 'Ждём ответа', yes: 'Придёт', plus: 'Придёт с парой', no: 'Не придёт' };
+async function api(p, m = 'GET', b) {
+  const r = await fetch('/api/' + p, { method: m, headers: { 'Content-Type': 'application/json' }, body: b ? JSON.stringify(b) : undefined });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw Error(j.error || 'Ошибка');
+  return j;
+}
+let tt; function toast(m) { const t = $('#toast'); t.textContent = m; t.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('show'), 2200); }
+const top = (title, back) => `<div class="top">${back ? '<button class="bk" id="bk">‹</button>' : ''}<span>${title}</span></div>`;
+function render(html, back) { app.innerHTML = html; if (back && $('#bk')) $('#bk').onclick = back; window.scrollTo(0, 0); }
+
+/* ---------- Вход / регистрация ---------- */
+function authView(mode = 'login') {
+  const login = mode === 'login';
+  render(`<div class="box"><h1>merekel_ykshaqyru</h1><p class="sub">${login ? 'Вход в личный кабинет' : 'Создание аккаунта'}</p>
+    <input id="em" type="email" placeholder="Email" autocomplete="email">
+    <input id="pw" type="password" placeholder="Пароль (от 6 символов)" autocomplete="${login ? 'current-password' : 'new-password'}">
+    <p id="err" class="err"></p><button class="btnr" id="go">${login ? 'Войти' : 'Зарегистрироваться'}</button>
+    <button class="lnk" id="sw">${login ? 'Нет аккаунта? Регистрация' : 'Уже есть аккаунт? Войти'}</button></div>`);
+  $('#sw').onclick = () => authView(login ? 'reg' : 'login');
+  $('#go').onclick = async () => {
+    try { await api(login ? 'login' : 'register', 'POST', { email: $('#em').value, password: $('#pw').value }); listView(); }
+    catch (x) { $('#err').textContent = x.message; }
+  };
+}
+
+/* ---------- Мои приглашения ---------- */
+async function listView() {
+  const rows = await api('invitations');
+  render(`${top('Мои приглашения')}<div class="wrap">
+    <div class="banner"><h2>Планируете мероприятие?</h2><p>Выберите язык, тип события и шаблон: приглашение будет готово за несколько минут</p><button class="btnw" id="new">+ Создать приглашение</button></div>
+    ${rows.map(r => `<div class="card"><h3 style="margin:0">${e(r.data.names)}</h3>
+      <p class="sub">${e(catName(r.data.category, 'ru'))}, ${e(r.data.date.replace('T', ' '))}, ${e(r.data.city)}</p>
+      <div class="stats"><div><b>${r.total}</b>гостей</div><div><b>${(r.yes || 0) + (r.plus || 0)}</b>придут</div><div><b>${r.no || 0}</b>откажутся</div></div>
+      <div class="row"><button class="btnr sm" style="margin:0;width:auto" data-g="${r.id}">Гости и ссылки</button><button class="btno sm" data-e="${r.id}">Изменить</button>
+      <a class="btno sm" target="_blank" href="/i/${r.slug}">Открыть</a><button class="lnk" data-d="${r.id}">Удалить</button></div></div>`).join('')}
+    <p class="lnk c" style="display:block"><button class="lnk" id="out">Выйти</button></p></div>`);
+  $('#new').onclick = () => { W = blank(); langView(); };
+  $('#out').onclick = async () => { await api('logout', 'POST'); authView(); };
+  const find = id => rows.find(r => r.id == id);
+  app.querySelectorAll('[data-g]').forEach(b => b.onclick = () => guestsView(find(b.dataset.g)));
+  app.querySelectorAll('[data-e]').forEach(b => b.onclick = () => editInv(find(b.dataset.e)));
+  app.querySelectorAll('[data-d]').forEach(b => b.onclick = async () => {
+    if (confirm('Удалить приглашение вместе со списком гостей?')) { await api('invitations/' + b.dataset.d, 'DELETE'); listView(); }
+  });
+}
+
+/* ---------- Состояние конструктора ---------- */
+let W;
+const blank = () => ({ lang: 'kk', category: '', tpl: 1, title: '', name1: '', name2: '', date: '', time: '', city: '', address: '', map_url: '', salut: '', text: '', hosts: '', tg_chat: '' });
+const U = () => WZ[W.lang] || WZ.ru;
+function editInv(inv) {
+  const d = inv.data; const [date, time] = (d.date || '').split('T');
+  W = { ...blank(), ...d, tpl: +d.tpl || 1, date, time: (time || '').slice(0, 5), id: inv.id, slug: inv.slug }; step(1);
+}
+
+/* 1. Язык */
+function langView() {
+  render(`${top('Выбор языка', listView)}<div class="wrap"><h2 class="c">Выберите основной язык приглашения</h2>
+    ${Object.entries(LANGS).map(([k, v]) => `<button class="lc ${W.lang == k ? 'sel' : ''}" data-l="${k}"><span class="ic">${W.lang == k ? '✓' : v.code}</span>
+      <span><b>${v.name}</b><small>${Object.keys(THEMES).length} шаблона</small></span></button>`).join('')}
+    <div class="note">💡 Это основной язык приглашения: на нём будет весь текст страницы для гостей.</div>
+    <button class="btnr" id="go">Продолжить ›</button></div>`, listView);
+  app.querySelectorAll('[data-l]').forEach(b => b.onclick = () => { W.lang = b.dataset.l; langView(); });
+  $('#go').onclick = catView;
+}
+
+/* 2. Тип события */
+function catView() {
+  render(`${top(U().evType, langView)}<div class="wrap">${GROUPS.map(g => `<h3>${g[W.lang] || g.ru}</h3>
+    <div class="chips">${g.items.map(([k, em]) => `<button class="chip" data-c="${k}">${em} ${catName(k, W.lang)}</button>`).join('')}</div>`).join('')}</div>`, langView);
+  app.querySelectorAll('[data-c]').forEach(b => b.onclick = () => { W.category = b.dataset.c; tplView(); });
+}
+
+/* 3. Шаблон */
+function tplView() {
+  const u = U(), n = W.name1 || 'Аскар', n2 = W.name2 ? ' & ' + W.name2 : ' & Аружан';
+  render(`${top(u.tplH, catView)}<div class="wrap"><div class="tabs"><button class="tab on">✨ ${u.tplTab}</button><button class="tab" data-x="1">⭐ ${u.vip}</button><button class="tab" data-x="1">🎨 ${u.custom}</button></div>
+    <div class="price">💰 <b>${PRICE}</b> ${u.price}</div>
+    <div class="grid">${Object.entries(THEMES).map(([id, t]) => `<div class="tp"><div class="phone"><div class="scr" style="background:linear-gradient(180deg,${t.h1},${t.h2});color:${t.ink}">
+      ${id == 4 ? `<span class="orn" style="color:${t.gold}"></span>` : ''}<small style="color:${t.gold}">${e(catName(W.category, W.lang))}</small><b>${e(n + n2)}</b><i style="color:${t.soft}">25.07.2027</i></div></div>
+      <b>${t.name}</b><br><button class="vw" data-t="${id}">${u.view} →</button></div>`).join('')}</div></div>`, catView);
+  app.querySelectorAll('[data-x]').forEach(b => b.onclick = () => toast(u.soon));
+  app.querySelectorAll('[data-t]').forEach(b => b.onclick = () => { W.tpl = +b.dataset.t; sheet(); });
+}
+function sheet() {
+  const u = U(), msg = `Здравствуйте! Хочу заказать приглашение: ${catName(W.category, 'ru')}, язык ${LANGS[W.lang].name}, шаблон «${THEMES[W.tpl].name}».`;
+  const ov = document.createElement('div'); ov.className = 'ov';
+  ov.innerHTML = `<div class="sheet"><h2>${u.howH}<button id="x">×</button></h2><div class="pink">✔ ${u.howNote}</div>
+    <div class="opt"><b>${u.self}</b> <small class="sub">≈ 5 min</small><p>${u.selfSub}</p><button class="btnr" id="s1" style="margin-top:8px">${u.self} →</button></div>
+    <div class="opt"><b>${u.mgr}</b> <small class="sub">≈ 40 min</small><p>${u.mgrSub}</p>
+      <a class="btnr" style="background:linear-gradient(90deg,#9B30FF,#E94B8B);margin-top:8px" target="_blank" rel="noopener" href="https://wa.me/${MANAGER_WA}?text=${encodeURIComponent(msg)}">${u.mgrBtn}</a>
+      <p class="c">+${MANAGER_WA}</p></div></div>`;
+  document.body.appendChild(ov);
+  $('#x').onclick = () => ov.remove(); ov.onclick = ev => { if (ev.target === ov) ov.remove(); };
+  $('#s1').onclick = () => { ov.remove(); step(1); };
+}
+
+/* 4. Мастер: 5 шагов */
+const stepper = n => `<div class="stp">${[1, 2, 3, 4, 5].map(i => `<span class="dot ${i < n ? 'ok' : i == n ? 'cur' : ''}">${i < n ? '✓' : i}</span>`).join('<i></i>')}</div>`;
+const fld = (k, l, ph = '', t = 'text') => `<label>${l}</label><input data-k="${k}" type="${t}" value="${e(W[k])}" placeholder="${e(ph)}">`;
+const slots = () => { const a = []; for (let h = 0; h < 24; h++) for (const m of ['00', '30']) a.push(String((h + 12) % 24).padStart(2, '0') + ':' + m); return a; };
+const namesOf = () => { const n = CAT_FIELDS[W.category].length; const v = [W.name1, W.name2].slice(0, n).filter(Boolean); return v.length ? v.join(' & ') : W.title; };
+
+function stepBody(n) {
+  const u = U(), f = CAT_FIELDS[W.category] || [];
+  if (n == 1) return `<h2>${u.main}</h2>${fld('title', u.titleF + ' *', 'Аскар мен Аружанның үйлену тойы')}${f.map((k, i) => fld('name' + (i + 1), u['l' + k] + ' *')).join('')}`;
+  if (n == 2) return `<h2>${u.dtH}</h2>${fld('date', u.dateF + ' *', '', 'date')}<label>${u.timeF} *</label>
+    <select data-k="time"><option value="">${u.timePh}</option>${slots().map(s => `<option ${W.time == s ? 'selected' : ''}>${s}</option>`).join('')}</select>
+    <div class="imp"><b>⚠ ${u.imp}</b>${u.dtNote}</div>`;
+  if (n == 3) return `<h2>${u.placeH}</h2>${fld('city', u.cityF + ' *')}${fld('address', u.addrF + ' *')}${fld('map_url', u.mapF, 'https://2gis.kz/...', 'url')}<p class="sub">${u.mapNote}</p>`;
+  if (n == 4) return `<h2>${u.textH}</h2><p class="sub">${u.textNote}</p><label>${u.salutF}</label><textarea data-k="salut" rows="3">${e(W.salut)}</textarea>
+    <label>${u.bodyF}</label><textarea data-k="text" rows="4">${e(W.text)}</textarea>${fld('hosts', u.hostsF)}${fld('tg_chat', 'Telegram chat ID (необязательно)')}`;
+  return `<div class="sumtxt"><b>${LANGS[W.lang].code} ${LANGS[W.lang].name}</b>\n${catName(W.category, W.lang)}: ${e(W.title)}\n${e(namesOf())}\n${e(W.date)} ${e(W.time)}, ${e(W.city)}, ${e(W.address)}\n\n${e(W.salut)}\n\n${e(W.text)}\n${e(W.hosts)}</div>
+    <button class="btno sm" id="ed" style="margin-top:12px">✎ ${u.edit}</button>`;
+}
+function step(n) {
+  const u = U(), last = n == 5;
+  render(`${top(u.main, () => n > 1 ? step(n - 1) : (W.id ? listView() : tplView()))}<div class="wrap">${stepper(n)}<div class="card" style="margin-top:18px">${stepBody(n)}<p class="err" id="err"></p></div>
+    <button class="btnr" id="next">${last ? u.create : u.next}</button><button class="btno" id="prev">${u.prev}</button></div>`, () => n > 1 ? step(n - 1) : (W.id ? listView() : tplView()));
+  const collect = () => app.querySelectorAll('[data-k]').forEach(i => W[i.dataset.k] = i.value.trim());
+  $('#prev').onclick = () => { collect(); n > 1 ? step(n - 1) : (W.id ? listView() : tplView()); };
+  if ($('#ed')) $('#ed').onclick = () => step(4);
+  $('#next').onclick = async () => {
+    collect();
+    const f = CAT_FIELDS[W.category], need = n == 1 ? [W.title, ...f.map((_, i) => W['name' + (i + 1)])] : n == 2 ? [W.date, W.time] : n == 3 ? [W.city, W.address] : [];
+    if (need.some(v => !v)) return $('#err').textContent = u.req;
+    if (n == 3) { if (!W.salut) W.salut = SALUT[W.lang]; if (!W.text) W.text = BODY[W.lang].replace('{title}', W.title); if (!W.hosts) W.hosts = namesOf(); }
+    if (n < 5) return step(n + 1);
+    try {   // «Сайт жасау»: сохраняем и генерируем страницу приглашения
+      const body = { lang: W.lang, category: W.category, tpl: String(W.tpl), title: W.title, names: namesOf(), name1: W.name1, name2: W.name2,
+        date: W.date + 'T' + W.time, city: W.city, address: W.address, map_url: W.map_url, salut: W.salut, text: W.text, hosts: W.hosts, tg_chat: W.tg_chat };
+      const r = await api(W.id ? 'invitations/' + W.id : 'invitations', W.id ? 'PUT' : 'POST', body);
+      if (!W.id) { W.id = r.id; W.slug = r.slug; }
+      doneView();
+    } catch (x) { $('#err').textContent = x.message; }
+  };
+}
+
+/* 5. Готово: сгенерированная страница */
+function doneView() {
+  const u = U(), url = `${location.origin}/i/${W.slug}`;
+  render(`${top(u.doneH)}<div class="wrap"><h2 class="c">🎉 ${u.doneH}</h2><iframe class="pv" src="/i/${W.slug}"></iframe>
+    <label>${url}</label><button class="btnr" id="cp">${u.copy}</button><a class="btno" target="_blank" href="/i/${W.slug}">↗ Открыть</a>
+    <button class="btno" id="gs">${u.guests}</button><button class="btno" id="ls">${u.toList}</button></div>`);
+  $('#cp').onclick = () => navigator.clipboard.writeText(url).then(() => toast(u.copied));
+  $('#ls').onclick = listView;
+  $('#gs').onclick = async () => guestsView((await api('invitations')).find(r => r.id == W.id));
+}
+
+/* ---------- Гости и персональные ссылки ---------- */
+async function guestsView(inv) {
+  const gs = await api(`invitations/${inv.id}/guests`);
+  const link = g => `${location.origin}/i/${inv.slug}/${g.token}`;
+  render(`${top(e(inv.data.names), listView)}<div class="wrap">
+  <div class="card"><label style="margin-top:0">Добавить гостей (каждое имя с новой строки)</label>
+    <textarea id="names" rows="4" placeholder="Алия Серикова&#10;Данияр и Мадина"></textarea><button class="btnr sm" id="add" style="margin-top:12px;width:auto">Добавить</button></div>
+  <div class="card">${gs.length ? gs.map(g => `<div class="g"><div>${e(g.name)}<small class="st-${g.status}">${ST[g.status]}${g.drinks ? ', ' + e(g.drinks) : ''}</small></div>
+    <div class="row" style="margin:0"><button class="btno sm" data-c="${g.id}">Копировать ссылку</button>
+    <a class="btno sm" target="_blank" href="https://wa.me/?text=${encodeURIComponent(T[inv.data.lang || 'ru'].wa.replace('{n}', g.name) + ' ' + link(g))}">WhatsApp</a>
+    <button class="lnk" data-x="${g.id}">Удалить</button></div></div>`).join('') : '<p class="sub c">Список гостей пуст.</p>'}</div></div>`, listView);
+  $('#add').onclick = async () => { await api(`invitations/${inv.id}/guests`, 'POST', { names: $('#names').value }); guestsView(inv); };
+  app.querySelectorAll('[data-c]').forEach(b => b.onclick = () => navigator.clipboard.writeText(link(gs.find(g => g.id == b.dataset.c))).then(() => toast('Ссылка скопирована')));
+  app.querySelectorAll('[data-x]').forEach(b => b.onclick = async () => { await api(`invitations/${inv.id}/guests/${b.dataset.x}`, 'DELETE'); guestsView(inv); });
+}
+
+api('me').then(listView).catch(() => authView());
+</script></body></html>
